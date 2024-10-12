@@ -1,0 +1,100 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>My portfolio</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <header>
+        <div class="hero">
+            <h1>Welcome to Soham Desai's Website</h1>
+        </div>
+    </header>
+    
+    <main>
+        <button class="tablink" onclick="openPage('Home', this, '#87CEEB')" id="defaultOpen">Home</button>
+        <button class="tablink" onclick="openPage('News', this, '#4CAF50')">University Info</button>
+        <button class="tablink" onclick="openPage('Contact', this, '#3498DB')">Resume</button>
+        <button class="tablink" onclick="openPage('About', this, '#F39C12')">Connect</button>
+
+        <div id="Home" class="tabcontent">
+        <h3>Home</h3>
+        <p>Welcome to my personal website! I'm Soham Desai, a passionate computer science student with a keen interest in software development and innovation.</p>
+        <p>Here, you'll find:</p>
+        <ul>
+            <li>An overview of my academic journey</li>
+            <li>Highlights of my projects and achievements</li>
+            <li>My skills and areas of expertise</li>
+            <li>Ways to connect with me professionally</li>
+        </ul>
+        <p>Feel free to explore the other tabs to learn more about my university, view my resume, and connect with me on various platforms. Thank you for visiting!</p>
+        </div>
+
+        <div id="News" class="tabcontent">
+        <h3>University Info</h3>
+        <a href="myUniversity.html" target="_blank">Click here to view my university information</a>
+        </div>
+
+        <div id="Contact" class="tabcontent">
+        <h3>Resume</h3>
+        <a href="resume.html" target="_blank">Click here to view my resume</a>
+        </div>
+
+        <div id="About" class="tabcontent">
+        <h3>Connect</h3>
+        <div class="social-icons">
+            <a href="https://www.linkedin.com/" target="_blank" class="social-icon">
+                <img src="https://cdn.jsdelivr.net/npm/simple-icons@v5/icons/linkedin.svg" alt="LinkedIn" width="30" height="30">
+            </a>
+            <a href="https://github.com/" target="_blank" class="social-icon">
+                <img src="https://cdn.jsdelivr.net/npm/simple-icons@v5/icons/github.svg" alt="GitHub" width="30" height="30">
+            </a>
+            <a href="https://twitter.com/" target="_blank" class="social-icon">
+                <img src="https://cdn.jsdelivr.net/npm/simple-icons@v5/icons/twitter.svg" alt="Twitter" width="30" height="30">
+            </a>
+        </div>
+        <style>
+            .social-icons {
+                display: flex;
+                justify-content: center;
+                gap: 20px;
+                margin-top: 20px;
+            }
+            .social-icon img {
+                transition: transform 0.3s ease;
+            }
+            .social-icon:hover img {
+                transform: scale(1.2);
+            }
+        </style>
+        </div>
+    </main>
+    <script>
+        function openPage(pageName, elmnt, color) {
+            // Hide all elements with class="tabcontent" by default */
+            var i, tabcontent, tablinks;
+            tabcontent = document.getElementsByClassName("tabcontent");
+            for (i = 0; i < tabcontent.length; i++) {
+              tabcontent[i].style.display = "none";
+            }
+          
+            // Remove the background color of all tablinks/buttons
+            tablinks = document.getElementsByClassName("tablink");
+            for (i = 0; i < tablinks.length; i++) {
+              tablinks[i].style.backgroundColor = "";
+            }
+          
+            // Show the specific tab content
+            document.getElementById(pageName).style.display = "block";
+          
+            // Add the specific color to the button used to open the tab content
+            elmnt.style.backgroundColor = color;
+          }
+          
+          // Get the element with id="defaultOpen" and click on it
+          document.getElementById("defaultOpen").click();
+    </script>
+</body>
+</html>
